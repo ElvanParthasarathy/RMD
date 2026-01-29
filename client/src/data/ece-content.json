@@ -1,0 +1,79 @@
+{
+    "sections": [
+        {
+            "id": "intro",
+            "type": "intro_card",
+            "title": "Department Overview",
+            "text": "The Department of Electronics and Communication Engineering (ECE) was established in the year 2001 with the aim of providing inclusive technology education to students. The department is equipped with adequate classrooms, department library, student waiting rooms, seminar hall and conference hall. Great strides in achieving technical excellence and has won noted acclaim for its exemplary standards in all fields.",
+            "stats": [
+                {
+                    "label": "Established",
+                    "value": "2001"
+                },
+                {
+                    "label": "Status",
+                    "value": "Exemplary Standards"
+                }
+            ]
+        },
+        {
+            "id": "faculty_labs",
+            "type": "feature_split",
+            "title": "Faculty & Infrastructure",
+            "text": "The department of Electronics and communication has well qualified faculty members with an intake of 180 students and it offers subjects relevant to current industrial needs. The department has engineering design and analytical software tools such as MATLAB / SIMULINK /Network Simulator and Xilinx. Also, the students are taken to industrial visits and they undergo in-plant training in reputed organizations. The Electronic Devices and Circuits, Communication, Microprocessor, Digital signal processing, Microwave, Electronic system design, Linear integrated circuits, VLSI, Networking are the well equipped laboratories with state of art facilities.",
+            "tags": [
+                "180 Students",
+                "Qualified Faculty",
+                "MATLAB",
+                "VLSI",
+                "Networking",
+                "Industrial Visits"
+            ]
+        },
+        {
+            "id": "facilities",
+            "type": "icon_grid",
+            "title": "Library & Seminar Hall",
+            "text": "A Library for staff and students with international magazines, journals, impressive collection of titles, 500 volumes of text and reference books and a fully furnished air-conditioned seminar hall with the seating capacity of 120 for hosting guest lectures and student programmes are made available.",
+            "features": [
+                "500+ Volumes",
+                "International Journals",
+                "AC Seminar Hall",
+                "120 Seats"
+            ]
+        },
+        {
+            "id": "networking",
+            "type": "networking_section",
+            "title": "Professional Networking",
+            "text": "The department has a close networking relationship with professional bodies such as AICTE, IETE, ISTE, IEEE, IEI, DST and experts from leading institution to excel their knowledge to out department students in the various emerging fields of electronics and communication engineering."
+        },
+        {
+            "id": "accreditation",
+            "type": "accreditation_banner",
+            "text": "The department is accredited by the National Board of Accreditation (NBA) from the academic year 2017-2018 to 2019-2020 and also ISO 9001:2015 certified."
+        },
+        {
+            "id": "dept_slider",
+            "type": "image_slider",
+            "images": [
+                {
+                    "url": "https://rmd.ac.in/dept/ece/images/image-slider-1.jpg",
+                    "caption": "Dr.K.HelenPrabha, Head of the Department, received the ISTE-Periyar Best Engineering College Teacher Award in 2022."
+                },
+                {
+                    "url": "https://rmd.ac.in/dept/ece/images/image-slider-2.jpg",
+                    "caption": "Won first prize with cash prize of Rs.1,00,000/ in Smart India Hackathon 2023 held at Forge, Coimbatore, Tamil Nadu"
+                },
+                {
+                    "url": "https://rmd.ac.in/dept/ece/images/image-slider-3.jpg",
+                    "caption": "Won Third prize with cash reward of Rs.25,000/- in Kumaraguru Livestock Hackathon at Kumaraguru College of Technology"
+                },
+                {
+                    "url": "https://rmd.ac.in/dept/ece/images/image-slider-4.jpg",
+                    "caption": "Won third prize with a cash award of Rs.20,000 in the Grand Finale of IBM Nalayathiran project-Umagine Techshow'23 held at Chennai trade centre, Nandambakkam"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,492 @@
+/* Home.css */
+
+/* Hero Slider */
+.hero-section {
+    padding: 1rem 0;
+    background-color: var(--bg-color);
+}
+
+.slider-container {
+    position: relative;
+    width: 100%;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    aspect-ratio: 2.25/1;
+    background-color: var(--border-color);
+}
+
+.slide {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    z-index: 0;
+    transition: opacity 0.7s ease-in-out;
+}
+
+.slide.active {
+    opacity: 1;
+    z-index: 10;
+}
+
+.slide-img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    /* Per user request: stretched and fitted */
+    display: block;
+}
+
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 30;
+    background-color: rgba(0, 0, 0, 0.4);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    transition: all var(--transition-fast);
+}
+
+.slider-btn:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.slider-container:hover .slider-btn {
+    opacity: 1;
+}
+
+.prev-btn {
+    left: 1rem;
+}
+
+.next-btn {
+    right: 1rem;
+}
+
+.slider-dots {
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 0.5rem;
+    z-index: 20;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: none;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    padding: 0;
+}
+
+.dot.active {
+    background-color: white;
+    transform: scale(1.2);
+}
+
+/* Quick Access */
+.quick-access-section {
+    padding: 2rem 1rem;
+}
+
+/* Quick Access Grid */
+.quick-access-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    /* Increased min-width */
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.quick-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: var(--surface-card);
+    padding: 2rem 1rem;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition-normal);
+    text-decoration: none;
+    border: 1px solid var(--border-color);
+    border-top: 4px solid var(--card-color);
+    /* Top border color */
+    min-height: 180px;
+    text-align: center;
+}
+
+.quick-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+    background: var(--card-color);
+    /* Fill with color on hover */
+}
+
+/* Certifications Flex Layout (Static) */
+.certifications-flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 1rem 0;
+}
+
+.cert-img-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    padding: 1rem;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border-color);
+    width: 200px;
+    height: 120px;
+    transition: transform 0.2s;
+}
+
+.cert-img-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary);
+    box-shadow: var(--shadow-md);
+}
+
+.cert-img-card img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+/* Remove Slider Keyframes */
+
+/* Remove Grid Media Queries */
+
+/* Fallback card styles (kept for loading state or if fetch fails) */
+.cert-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--surface-card);
+    padding: 1rem 1.25rem;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    text-decoration: none;
+    transition: all var(--transition-normal);
+    border: 1px solid var(--border-color);
+}
+
+.cert-card:hover {
+    transform: translateX(5px);
+    box-shadow: var(--shadow-md);
+    background: var(--surface-hover);
+}
+
+.cert-title {
+    font-weight: 500;
+    color: var(--text-primary);
+    font-size: 0.95rem;
+}
+
+/* Icon Container */
+.quick-card-icon {
+    margin-bottom: 1rem;
+    transition: all var(--transition-normal);
+}
+
+.quick-card:hover .quick-card-icon {
+    color: white !important;
+    /* Force icon white on hover */
+    transform: scale(1.1);
+}
+
+/* Title */
+.quick-card-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 0;
+    transition: all var(--transition-normal);
+    line-height: 1.4;
+}
+
+.quick-card:hover .quick-card-title {
+    color: white;
+    /* Text white on hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+    .quick-access-grid {
+        grid-template-columns: repeat(2, 1fr);
+        /* 2 columns on mobile */
+        gap: 1rem;
+    }
+
+    .quick-card {
+        min-height: 150px;
+        padding: 1.5rem 0.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .certifications-flex-container {
+        gap: 1rem;
+    }
+
+    .cert-img-card {
+        width: 140px;
+        height: 90px;
+    }
+}
+
+/* Skeleton Loader */
+.skeleton {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: skeleton-loading 1.5s infinite;
+    border-radius: 4px;
+}
+
+@keyframes skeleton-loading {
+    0% {
+        background-position: 200% 0;
+    }
+
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+.skeleton-card {
+    background: white;
+    border-radius: var(--radius-lg);
+    padding: 1rem;
+    height: 100%;
+    min-height: 300px;
+    box-shadow: var(--shadow-sm);
+}
+
+.skeleton-header {
+    height: 30px;
+    width: 60%;
+    margin-bottom: 1rem;
+}
+
+.skeleton-text {
+    height: 16px;
+    width: 100%;
+    margin-bottom: 0.5rem;
+}
+
+.skeleton-text:last-child {
+    width: 80%;
+}
+
+.quick-card-label {
+    z-index: 2;
+    font-size: 0.9rem;
+    font-weight: 700;
+    line-height: 1.2;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Brand Colors for cards */
+.bg-red {
+    background-color: #E92727;
+}
+
+.bg-orange {
+    background-color: #FFA500;
+}
+
+.bg-gold {
+    background-color: #CCBE00;
+}
+
+.bg-cyan {
+    background-color: #00DDDD;
+}
+
+/* Dark mode adjustment for Cyan text readability if needed, but white text is requested */
+.bg-green {
+    background-color: #009966;
+}
+
+.bg-blue {
+    background-color: #1313C9;
+}
+
+/* Info Section (News, Awards, Placements) */
+.info-section {
+    margin-bottom: 3rem;
+    padding-top: 1rem;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+@media (min-width: 1024px) {
+    .info-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.info-card {
+    /* No visible card background per design request - clean look */
+    background-color: transparent;
+    /* Or keeping card but minimal? User image shows clean white bg potentially or transparent on light grey. */
+    /* Let's stick to minimal card for structure but make header distinct */
+    background: transparent;
+    border-radius: 0;
+    box-shadow: none;
+    border: none;
+    display: flex;
+    flex-direction: column;
+}
+
+.info-header {
+    /* User image shows just blue text header, centered */
+    color: #0000FF;
+    /* Bright blue per image */
+    font-weight: 700;
+    font-size: 1.1rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    padding: 0;
+    background: transparent;
+    text-transform: none;
+    /* User image is Title Case */
+}
+
+/* Override old header classes if they persist */
+.header-blue,
+.header-gold {
+    background: transparent;
+    color: #0000FF;
+}
+
+.marquee-container {
+    height: 400px;
+    /* Fixed height for scrolling area */
+    overflow: hidden;
+    position: relative;
+    padding: 0 0.5rem;
+    /* Mask/Fade effect at top and bottom maybe? */
+    mask-image: linear-gradient(to bottom, transparent, black 10%, black 90%, transparent);
+    -webkit-mask-image: linear-gradient(to bottom, transparent, black 10%, black 90%, transparent);
+}
+
+.marquee-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    /* More space between items */
+}
+
+/* Slower scroll class */
+.slow-scroll {
+    /* Duration will be set inline */
+    animation-name: scrollUp;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes scrollUp {
+    0% {
+        transform: translateY(400px);
+    }
+
+    100% {
+        transform: translateY(-100%);
+    }
+}
+
+.news-item {
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-bottom: 0;
+    font-size: 0.9rem;
+    color: #333;
+    line-height: 1.6;
+    text-align: left;
+    /* Image shows justified/left text */
+}
+
+.news-link {
+    color: #444;
+    font-weight: 500;
+    text-decoration: none;
+    text-align: justify;
+    display: block;
+}
+
+.badge-star,
+.badge-new {
+    display: none;
+    /* User image doesn't strictly show these badges, keeping text clean */
+}
+
+/* Placement Items in Marquee */
+.placement-item {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #333;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+}
+
+.placement-item::before {
+    content: "•";
+    color: black;
+    font-weight: bold;
+}
+
+.company-text {
+    line-height: 1.5;
+}
+
+/* Info Footer (More Button) */
+.info-footer {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.more-btn {
+    background-color: #0056b3;
+    color: white;
+    padding: 0.4rem 1.2rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    transition: background-color 0.2s;
+}
+
+.more-btn:hover {
+    background-color: #004494;
+}
