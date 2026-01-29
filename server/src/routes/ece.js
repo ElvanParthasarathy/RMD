@@ -35,6 +35,12 @@ router.get('/image', async (req, res) => {
             res.setHeader('Content-Type', response.headers['content-type']);
         }
 
+        // Cache for 24 hours (86400 seconds)
+        // 'public' = can be cached by Vercel CDN
+        // 'max-age' = browser cache
+        // 's-maxage' = CDN cache
+        res.setHeader('Cache-Control', 'public, max-age=86400, s-maxage=86400');
+
         response.data.pipe(res);
     } catch (error) {
         console.error('Proxy error:', error.message);
