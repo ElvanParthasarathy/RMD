@@ -2,10 +2,21 @@ const express = require('express');
 const router = express.Router();
 const { scrapeECEContent } = require('../scrapers/ece');
 
+const NodeCache = require('node-cache');
+const cache = new NodeCache({ stdTTL: 3600 }); // Cache for 1 hour
+
 router.get('/', async (req, res) => {
     try {
+        const cacheKey = 'ece_content';
+        const cachedData = cache.get(cacheKey);
+
+        if (cachedData) {
+            return res.json({ success: true, data: cachedData, cached: true });
+        }
+
         const data = await scrapeECEContent();
-        res.json({ success: true, data });
+        cache.set(cacheKey, data);
+        res.json({ success: true, data, cached: false });
     } catch (error) {
         console.error('Scraping error:', error);
         res.status(500).json({ success: false, error: 'Failed to fetch ECE content' });
